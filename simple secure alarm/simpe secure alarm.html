@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KoddyBlock</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://koddyblockgames.s3.us-east-2.amazonaws.com/live/public/upload/documents/ao4axs/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('body').bind('cut copy', function(e) {
+              e.preventDefault();
+            });
+        });
+    </script>
+</head>
+<style>
+   h3, h5, h4, h2, h1{
+      background-color:#339FFF;
+      padding:12px;
+      color:#FFFFFF;
+      width:100%;
+      margin-top:12px;
+     
+    }
+    h5{
+      font-size:20px;
+      background-color:#FFD95A;
+      padding:12px;
+      color:#4D6804;
+      width:100%;
+      margin-top:12px;
+       }
+    body, p, ul, ol, li{
+      font-size:17px;
+      text-align:justify;
+      
+    }
+    table th{
+      background-color:#FFD95A;
+      padding:12px;
+      color:#4D6804 !important;
+      text-align:center;
+    }
+    table th, td{
+      /*border: 1px solid green;*/
+      padding:7px;
+    }
+    table{
+      width:100%;
+    }
+    .key table, tr, th, td {
+      background-color:none !important;
+      padding:none !important;
+      color:none !important;
+      text-align:none !important;
+      vertical-align: top;
+    }
+   h6{
+    font-size: 18px;
+   }
+   .im{
+   width:40%;
+    border:2px solid green;
+   }
+   .bu{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 40px;
+    width: 30%;
+   }
+   .sol{
+
+    background-color: #f2f8d9;
+    color: #654904;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 15px;
+   }
+
+  </style>
+<body>
+
+<!--<div class="container-fluid text-center">    
+
+    <a href="https://koddyblock.com/"><img style="width: 15%;margin: 15px;" src="https://koddyblockgames.s3.us-east-2.amazonaws.com/live/public/upload/documents/ao4axs/landing-logo.svg"/></a>
+ 
+</div>-->
+
+<div class="container-fluid text-center"  style="padding-left: 85px;padding-right: 85px;margin-left: 22px;
+    margin-right: 22px;background-color: #f5f5ef;">    
+  <div class="row content">
+   
+    <div class="col-sm-8 text-left"> 
+      <h1> Simple Security Alarm
+
+
+      </h1>
+      Simple Security Alarm system allow you to notify if someome have touch your precious things or not. This device have a built-in sensor called accelerometer which detects movement and send a signal  with a help of sound and display. 
+      That’s sound interesting right. Lets start the code without any delay.
+
+
+      <h2>Things you need before you started</h2>
+      <b><ul><b><li>Micro:bit</li><li>MakeCode online code editor</li><li>Battery pack</li><li>	
+        something precious to keep safe
+
+       </li><li>
+          optional headphones, buzzers or powered speakers  </li></b></ul> 
+</b>
+<img src ="2.png" height ="auto" width="100%""> 
+
+      <h2>Logic:</h2>
+     <ul>
+  <li>When the micro:bit is shaken, the accelerometer detects movement and show an image and play an alarm sound.</li>
+
+   <li>It also sends a 'thief!' radio message so that it can warn you if someone is moving your valuable obejcts.</li>
+  <li>  If you have two micro:bits, flash this program to both and keep on in object and another with your and connect buzzer. </li>
+<li> we will use alarm function in this system to play the tune on movement sensor.</li>
+   </ul>
+      
+      
+      
+     
+      
+
+
+
+
+
+
+
+
+     <h2> Steps</h2>
+     <ul>
+     <li><b>Step 1:</b> Open make code online editor i.e. <a href="https://python.microbit.org">https://python.microbit.org</a></li>
+     <li><b>Step 2:</b> Go to your Python editor.</li>
+     <li><b>Step 3:</b> Write the following code in the editor.</li>
+      </ul>
+      
+      
+      
+
+        <h2>Code with Python </h2>
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">microbit</span> <span style="color: #008800; font-weight: bold">import</span> <span style="color: #333333">*</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">radio</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">music</span>
+radio<span style="color: #333333">.</span>config(group<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>)
+radio<span style="color: #333333">.</span>on()
+
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">alarm</span>():
+    display<span style="color: #333333">.</span>show(Image<span style="color: #333333">.</span>ANGRY)
+    music<span style="color: #333333">.</span>play(music<span style="color: #333333">.</span>BADDY)
+    
+<span style="color: #008800; font-weight: bold">while</span> <span style="color: #007020">True</span>:
+    message <span style="color: #333333">=</span> radio<span style="color: #333333">.</span>receive()
+    <span style="color: #008800; font-weight: bold">if</span> message:
+        alarm()
+    <span style="color: #008800; font-weight: bold">if</span> accelerometer<span style="color: #333333">.</span>was_gesture(<span style="background-color: #fff0f0">&#39;shake&#39;</span>):
+        radio<span style="color: #333333">.</span>send(<span style="background-color: #fff0f0">&#39;thief!&#39;</span>)
+        alarm()
+</pre></div>
+
+
+<h2>Final things to do </h2>
+ Connect micro bit with the USB cable. Download/Flash the code into the microbit system. Hurray, we did it.
+
+ <h2>Challenges</h2>
+ <ul>
+   <li>Send different messages and show different picture for alarm</li>
+  <li>Make it more sensitive using alarm system</li>
+
+   </ul>
+      </div>
+      </div>
+</body>
+</html>
